@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* todo1: html is root element, and so it is base of rem!!!
+set the base front-size to 10px is a good practice for avoiding a lot of calculations.
+to make it possible for the user to change the browser font size we use % of browser font size
+witch is default 16px */
+html {
+    /* 10:16= 0.625 => 62.5%*/
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
