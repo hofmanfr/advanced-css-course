@@ -17,25 +17,39 @@ $font-display: 'Josefin Sans', sans-serif;
 
 *,
 *::before,
-*::after{
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
 }
 
-html{
+html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
 
-body{
+body {
     font-family: $font-primary;
     color: $color-grey-dark-2;
     font-weight: 300;
     line-height: 1.6;
 }
 
-.container{
+.container {
     display: grid;
-    grid-template-rows: 80vh min-content 40vw repeat(3,min-content); //min-content == auto
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content); //min-content == auto
+    //start with a 8 column layout -> 107
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end 
+                                full-start] 
+                                    minmax(6rem, 1fr) 
+                                        [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) 
+                                        [center-end] 
+                                    minmax(6rem, 1fr) 
+                                [full-end];
+
+    &>* {
+        padding: 40px;
+        font-size: 3rem;
+        color: red;
+    }
 }
